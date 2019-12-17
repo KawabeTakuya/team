@@ -3,29 +3,13 @@
    session_start();
 
    // functions include
-   include(__DIR__.'/functions/home/functions.php');
+   include(__DIR__.'/functions/functions.php'); 
+
+   // html header include
+   include(__DIR__.'/include/home/header.php'); 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/home/home.css"> <!-- 運営元ページ用のcss  -->
-    <title>サービスの運営元ホーム</title>
-</head>
-<body>
-<div class="wrapper">
-
-<!-- headerここから-->
-<header> 
-  <a href="home.php"><img src="./img/home/service_logo.png" width="255" height="287" alt="モノガタリ サービスロゴ" /></a>
-  <h1>運営元のホームページ</h1>
-</header>
-<!-- headerここまで  -->
-
+<h1>運営者元ホームページ</h1>
 
 <!-- セラーログインページ    -->
 <div>
@@ -53,14 +37,11 @@ if(isset($errMsg)){
 </ul>
 </form>
 
-<p>新規登録は<a href="newacc.php">こちら</a></p>
+<p>新規登録は<a href="home_newacc.php">こちら</a></p>
 </div>
 <!-- セラーログイン ここまで --> 
 
-</div> <!-- Wrapper ends here  -->
-
-<!-- 運営元ページhome.phpおよび付随するページ向けのjs関数を読み込む --> 
-<script type="text/javascript" src="js/home/functions.js"></script>
-
-</body>
-</html>
+<?php 
+// html header include
+   include(__DIR__.'/include/home/footer.php'); 
+?>
