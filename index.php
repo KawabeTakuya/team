@@ -1,3 +1,25 @@
+<?php
+session_start();
+
+include("functions/home/functions.php");
+// // sschk();
+$pdo = db_conn();
+
+//クエリの商品idを変数化
+$query = $_SERVER['QUERY_STRING'];
+parse_str($query);
+//商品id名：$p_code
+
+// //２．データ登録SQL作成
+$stmt = $pdo->prepare("SELECT * FROM mst_product WHERE p_code = $p_code");
+$status = $stmt->execute();
+foreach ($stmt as $r) {
+  // データベースのフィールド名で出力。
+  // echo $row['p_name'];みたいな感じで書いたらHTML内に持ってこれるで。
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -57,6 +79,7 @@
 
  -->
    <h1>商品トップコンテンツ (動画 or 写真)</h1>
+   <?php echo'<img src="upload/'.$r["p_img"].'">'?>
    <ul>
     <li><a href="nice.php">いいね！</a></li>
     <li><a href="follow.php">商品をフォロー</a></li>
@@ -73,10 +96,10 @@
    4. ニュース 例 3件だけ表示
  --> 
   <section> 
-    <h2>商品名</h2> <!-- 1. 商品の名称・品名・品番など  -->
+    <h2><?php echo $r['p_name'];?></h2> <!-- 1. 商品の名称・品名・品番など  -->
     <a href="products.php?shop=aaa&items=xxx">もっと見る</a> <!-- 商品詳細ページへのリンク  -->
     <!-- 商品詳細  -->
-    <p>商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト 商品紹介テキスト</p>
+    <p><?php echo $r['p_comment']?></p>
     <p>追加画像など・・・</p>
   </section>
  
