@@ -24,7 +24,7 @@
    8. Log in ログインページ (OAuthによるSNSログイン・Emailログイン、または新規登録)
  -->
    <ul>
-     <li><a href="index.php?shop=aaaa&itemsxxxx">トップ</a></li> <!-- (1) 商品トップページ URLに生産者名と商品ID   -->
+     <li><a href="index.php?shop=aaaa&itemsxxxx">サービス名</a></li> <!-- (1) 商品トップページ URLに生産者名と商品ID   -->
      <li><a href="profile.php?shop=aaaa">生産者紹介</a></li> <!-- (2) 生産者紹介・こだわり URLは生産者名   --> 
      <li><a href="contens.php?shop=aaa&items=xxx">使い方</a></li> <!--  (3) How toコンテンツページ URLは生産者名、商品ID、コンテンツID  -->
      <li><a href="news.php?shop=aaa&items=xxx">お知らせ</a></li> <!-- (4) ニュース URLは生産者生と商品ID   -->
