@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>サービス名</title>
 </head>
 <body>
 <div id="wrapper"> <!-- すべてのコンテンツを囲むwrapper   -->
 <!-- include header.php ここまで    -->
 
+<li><a href="index.php?shop=aaaa&itemsxxxx">soxil</a></li> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
+
 <!-- include navitation.php ここから  -->
- <nav>
+ <nav class="globalMenu">
  <!--    
    navigation 各ページへのリンク ※全ページ共通のコンポーネント
    1. Top 商品トップページ
@@ -24,7 +29,7 @@
    8. Log in ログインページ (OAuthによるSNSログイン・Emailログイン、または新規登録)
  -->
    <ul>
-     <li><a href="index.php?shop=aaaa&itemsxxxx">サービス名</a></li> <!-- (1) 商品トップページ URLに生産者名と商品ID   -->
+     <li><a href="index.php?shop=aaaa&itemsxxxx">soxil</a></li> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
      <li><a href="profile.php?shop=aaaa">生産者紹介</a></li> <!-- (2) 生産者紹介・こだわり URLは生産者名   --> 
      <li><a href="contens.php?shop=aaa&items=xxx">使い方</a></li> <!--  (3) How toコンテンツページ URLは生産者名、商品ID、コンテンツID  -->
      <li><a href="news.php?shop=aaa&items=xxx">お知らせ</a></li> <!-- (4) ニュース URLは生産者生と商品ID   -->
@@ -35,6 +40,13 @@
    </ul>
  </nav>
  <!-- include navitation.php ここまで  -->
+<!-- ハンバーガーメニュー -->
+<div class="navToggle">
+<span></span> 
+<span></span> 
+<span></span> 
+<span>menu</span> 
+</div>
 
  <header> 
  <!--    
@@ -72,6 +84,7 @@
      <h2>使い方(コンテンツ)</h2> <!-- (3) コンテンツ How to 例: 登録されたうち1件を表示   -->
      <a href="contens.php?shop=aaa&items=xxx">もっと見る</a> <!-- コンテンツページへのリンク  -->
      <p>動画・写真</p>
+     <iframe width=100% height=600px scrolling=no src=../team/creator_test.jpg></iframe>
      <p>コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト </p>
    </section>
 
@@ -93,6 +106,21 @@
  <!-- include footer.php ここまで  -->
 
 </div>  <!-- wrapper ここで終わり   -->
+
+<script>
+    $(function(){
+      $('.navToggle').click(function(){
+        $(this).toggleClass('active');
+        console.log(this);
+        if($(this).hasClass('active')){
+          $('.globalMenu').addClass('active');
+      }else{
+        $('.globalMenu').removeClass('active');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
 <!-- include footer.php ここまで -->
