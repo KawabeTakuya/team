@@ -1,6 +1,5 @@
 <?php
-// // 各便利な関数をまとめて管理しておくファイル
-// session_start();
+// 各便利な関数をまとめて管理しておくファイル
 
 // ログインチェック ログインしているユーザーだけにコンテンツを表示したい場合にfunctions.phpの後に呼び出し
 function chkSsid(){
@@ -16,9 +15,9 @@ function chkSsid(){
 function db_conn(){
     try {
         //Password:MAMP='root',XAMPP=''
-        //dbnameを"team"に変更しました
+
         $pdo = new PDO('mysql:dbname=team;charset=utf8;host=localhost','root','root');
-        //$pdo = new PDO('mysql:dbname=redturtle44_artisans;charset=utf8;host=mysql743.db.sakura.ne.jp','redturtle44','aRsA-s-5G');
+
         return $pdo;
       } catch (PDOException $e) {
         exit('DB Connection Error'.$e->getMessage());
@@ -31,14 +30,6 @@ function sql_error($stmt){
   $error = $stmt->errorInfo();
   exit("SQL ERROR can't fetch the data from DB for some reasons:".$error[2]);
 }
-
-// DBエラー処理2 MyCart.phpアクセスの場合、カートの中身が無い場合の処理
-//function sql_error2($stmt){
-  //execute（SQL実行時にエラーがある場合）
-  //return $errormsg= '<p>エラー: カートの中にアイテムがありません。 </p><p><a class=\"border\" href=\"products_cat.php\">さっそく、商品を見てみましょう！</a><\p>';
-  // $error = $stmt->errorInfo();
-  // exit("SQL ERROR can't fetch the data from DB for some reasons:".$error[2]);
-//}
 
 //リダイレクト
 function redirect($file_name){
