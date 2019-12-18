@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="index.css" />
-    <title>サービス名</title>
+    <title>user top</title>
 </head>
 <body>
 <div id="wrapper"> <!-- すべてのコンテンツを囲むwrapper   -->
 <!-- include header.php ここまで    -->
 
-<li><a href="index.php?shop=aaaa&itemsxxxx">soxil</a></li> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
+<a href="top.php?shop=aaaa&itemsxxxx">
+  <img src="../team/img/user/logo_test.png" width="100" height="100" alt="サービスロゴ">
+</a> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
 
 <!-- include navitation.php ここから  -->
  <nav class="globalMenu">
- <!--    
+ <!--
    navigation 各ページへのリンク ※全ページ共通のコンポーネント
    1. Top 商品トップページ
    2. Story 生産者紹介・こだわり
@@ -29,9 +31,9 @@
    8. Log in ログインページ (OAuthによるSNSログイン・Emailログイン、または新規登録)
  -->
    <ul>
-     <li><a href="index.php?shop=aaaa&itemsxxxx">soxil</a></li> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
+     <li><a href="top.php?shop=aaaa&itemsxxxx">soxil</a></li> <!-- (1) サービストップページ URLに生産者名と商品ID   -->
      <li><a href="profile.php?shop=aaaa">生産者紹介</a></li> <!-- (2) 生産者紹介・こだわり URLは生産者名   --> 
-     <li><a href="contens.php?shop=aaa&items=xxx">使い方</a></li> <!--  (3) How toコンテンツページ URLは生産者名、商品ID、コンテンツID  -->
+     <li><a href="contents.php?shop=aaa&items=xxx">使い方</a></li> <!--  (3) How toコンテンツページ URLは生産者名、商品ID、コンテンツID  -->
      <li><a href="news.php?shop=aaa&items=xxx">お知らせ</a></li> <!-- (4) ニュース URLは生産者生と商品ID   -->
      <li><a href="list.php?shop=aaa">商品一覧</a></li> <!-- (5) 同生産者が販売するアイテム一覧 URLは生産者名  -->
      <li><a href="msg.php?shop=aaa&items=xxx">生産者と話す</a></li> <!-- (6) メッセージ  URLは生産者と商品ID   -->
@@ -48,24 +50,26 @@
 <span>menu</span> 
 </div>
 
+
  <header> 
  <!--    
    headerで表示する要素
    1. 商品トップコンテンツ (動画 or 写真)
    2. 商品フォロー機能
    3. サービス運営ページアイコンリンク
-
  -->
-   <h1>商品トップコンテンツ (動画 or 写真)</h1>
+ <iframe width=100% height=600px scrolling=no src="../team/img/user/creator_test.jpg" ></iframe>
+
+   <!-- <h1>商品トップコンテンツ (動画 or 写真)</h1> -->
    <ul>
-    <li><a href="nice.php">いいね！</a></li>
+    <li><a href="nice.php">いいね</div></a></li>
     <li><a href="follow.php">商品をフォロー</a></li>
     <li><a href="home.php">運営元ページ</a></li>
    </ul>
  </header>
 
  <main>
- <!--  
+ <!--
    コンテンツを表示 トップページの場合、リード(導入部分)の表示となる
    1. 商品名
    2. 商品詳細
@@ -84,7 +88,7 @@
      <h2>使い方(コンテンツ)</h2> <!-- (3) コンテンツ How to 例: 登録されたうち1件を表示   -->
      <a href="contens.php?shop=aaa&items=xxx">もっと見る</a> <!-- コンテンツページへのリンク  -->
      <p>動画・写真</p>
-     <iframe width=100% height=600px scrolling=no src=../team/creator_test.jpg></iframe>
+     
      <p>コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト コンテンツテキスト </p>
    </section>
 
@@ -108,6 +112,7 @@
 </div>  <!-- wrapper ここで終わり   -->
 
 <script>
+  // ハンバーガーメニュー
     $(function(){
       $('.navToggle').click(function(){
         $(this).toggleClass('active');
