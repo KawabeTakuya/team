@@ -429,7 +429,7 @@ function newAccAct(){
        function ajax_newaccountAdd(){
        return $.ajax({
         type: 'post',
-        url: 'newaccount_act.php',
+        url: 'home_newaccount_act.php',
         data: {
             name:getName,
             name_in_charge:getName_in_charge,
@@ -452,11 +452,13 @@ function newAccAct(){
       // すでに同じEMailが登録した際、エラーメッセージを出す
       if(result===false){
         // ajax側でresultにfalseが入った場合の処理 (すでに同じEMailが登録した際)
+        console.log("Ajaxすでに同じメールあり");
         caub4.insertAdjacentHTML('afterbegin', "<div class=\"cau2\">"); // エラーメッセージ前半部
         document.querySelector('.cau2').insertAdjacentHTML('afterbegin', "<p>すでに同じメールアドレスが登録されています。別のアドレスをお使いください。</p>"); 
         caub4.insertAdjacentHTML('beforeend', "</div>"); // エラーメッセージ後半部
     }else if(result===true){
-        window.location.href = 'login.php'; // login.phpに遷移し、成功メッセージを表示
+        console.log("Ajax登録成功");
+        window.location.href = 'home.php'; // login.phpに遷移し、成功メッセージを表示
         // caub4.insertAdjacentHTML('afterbegin', "<div class=\"cau2\">"); // エラーメッセージ前半部
         // document.querySelector('.cau2').insertAdjacentHTML('afterbegin', result); 
         // caub4.insertAdjacentHTML('beforeend', "</div>"); // エラーメッセージ後半部
